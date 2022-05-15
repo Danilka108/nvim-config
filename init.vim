@@ -8,13 +8,15 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-
+    Plug 'ryanoasis/vim-devicons'
     Plug 'sheerun/vim-polyglot'
     Plug 'scrooloose/NERDTree'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ayu-theme/ayu-vim'
+    Plug 'scrooloose/nerdcommenter'
     Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+    Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -56,12 +58,18 @@ set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
-set clipboard=unnamedplus               " Copy paste between vim and everything else
+set clipboard+=unnamedplus               " Copy paste between vim and everything else
 "set autochdir                           " Your working directory will always be the same as your working directory
 
 "--------------------
 " Coc
 "--------------------
+
+let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-pairs',
+      \ 'coc-rust-analyzer',
+      \ ]
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -93,7 +101,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  autocmd FileType typescript, rust, json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
@@ -180,14 +188,23 @@ let g:airline_symbols.linenr = ''
 " Theme
 "--------------------
 
+let g:airline_theme="gruvbox"
+
 " let g:airline_theme="ayu_light"
-let g:airline_theme="ayu_mirage"
+" let g:airline_theme="ayu_mirage"
+" let g:airline_theme="ayu_dark"
 
 " set background=light
 set background=dark
 
-set termguicolors
-" let ayucolor="light"
-let ayucolor="mirage"
-" let ayucolor="dark"
-colorscheme ayu
+let g:gruvbox_italic = 1
+let g:gruvbox_italicize_strings = 1
+
+colorscheme gruvbox 
+
+
+"set termguicolors
+"let ayucolor="light"
+"" let ayucolor="mirage"
+"" let ayucolor="dark"
+"colorscheme ayu
