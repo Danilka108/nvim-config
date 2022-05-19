@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ayu-theme/ayu-vim'
     Plug 'scrooloose/nerdcommenter'
-    Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+    Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': 'yarn install --frozen-lockfile' }
     Plug 'morhetz/gruvbox'
 
 call plug#end()

@@ -1,5 +1,0 @@
-sudo pamac install nodejs npm yarn
-
-:CocInstall coc-json
-:CocInstall coc-pairs
-:CocInstall coc-rust-analyzer
