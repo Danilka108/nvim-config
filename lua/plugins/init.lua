@@ -18,7 +18,7 @@ require 'packer'.startup(function(use)
 	use {
 		'sainnhe/gruvbox-material',
 		config = function ()
-			require 'plugins.material'
+			require 'plugins.gruvbox'
 		end
 	}
 
