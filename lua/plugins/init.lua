@@ -78,6 +78,7 @@ require 'packer'.startup(function(use)
 		end
 	}
 
+	-- LSP auto complete
 	use {
 		'hrsh7th/nvim-cmp',
 		requires = {
@@ -115,5 +116,28 @@ require 'packer'.startup(function(use)
 		config = function()
 			require "plugins.trouble"
 		end,
+	}
+
+	-- LSP installer
+	-- Unix requirements:
+	-- git
+	-- curl
+	-- wget
+	-- unzip
+	-- tar
+	-- gzip
+	use {
+		'williamboman/mason.nvim',
+		config = function()
+			require 'plugins.mason'
+		end
+	}
+
+	-- mason - lspconfig
+	use {
+		'williamboman/mason-lspconfig.nvim',
+		config = function()
+			require 'plugins.mason-lsp-config'
+		end
 	}
 end)
