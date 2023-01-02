@@ -1,5 +1,3 @@
-vim.g.mapleader = ','
-
 -- Insert 2 spaces for a tab
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
@@ -25,5 +23,8 @@ vim.opt.relativenumber = true
 
 vim.opt.termguicolors = true
 
+-- Do not show mode like '-- INSERT --'
+vim.cmd[[set noshowmode]]
+
 -- Do not comment newline
-vim.cmd('autocmd BufEnter * set fo-=c fo-=r fo-=o')
+vim.cmd[[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
