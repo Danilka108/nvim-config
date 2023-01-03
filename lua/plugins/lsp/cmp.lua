@@ -73,13 +73,13 @@ cmp.setup {
 
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
-		{ name = 'nvim_lua' },
 		{ name = 'nvim_lsp_signature_help' },
 		{ name = 'luasnip' },
-		{ name = 'buffer' },
-		{ name = 'path' },
 		{ name = "emoji" },
+		{ name = 'path' },
+		{ name = 'nvim_lua' },
 	}, {
+		{ name = 'buffer', keyword_length = 3 },
 	}),
 
 	formatting = {

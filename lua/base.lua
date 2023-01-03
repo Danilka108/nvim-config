@@ -24,7 +24,13 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 
 -- Do not show mode like '-- INSERT --'
-vim.cmd[[set noshowmode]]
+vim.cmd [[set noshowmode]]
 
 -- Do not comment newline
-vim.cmd[[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
+vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]
+
+vim.opt.updatetime = 100
+vim.opt.timeoutlen = 500
+
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencoding = 'utf-8'
