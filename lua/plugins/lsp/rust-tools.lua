@@ -23,7 +23,19 @@ local common = require 'plugins.lsp.common'
 --     }
 -- })
 
-require 'rust-tools'.setup({
+local rt = require 'rust-tools'
+
+rt.setup({
+	tools = {
+		autoSetHints = true,
+		hover_with_actions = true,
+		runnables = {
+			use_telescope = true,
+		},
+		debuggables = {
+			use_telescope = true,
+		},
+	},
 	server = {
 		capabilities = common.capabilities,
 		on_attach = common.on_attach,

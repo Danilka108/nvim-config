@@ -18,6 +18,7 @@ M.on_attach = function(client, bufnr)
 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
 	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
 	vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+	-- vim.cmd [[nnoremap <buffer> <expr><c-f> lsp#scroll(+4)]]
 
 	vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, bufopts)
 	vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)

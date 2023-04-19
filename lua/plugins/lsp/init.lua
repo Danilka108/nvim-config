@@ -1,7 +1,6 @@
 local M = {}
 
 M.startup = function(use)
-
 	-- vim.formatting.config {
 	-- 	float = { border = 'rounded' },
 	-- }
@@ -87,10 +86,31 @@ M.startup = function(use)
 	use {
 		'williamboman/mason-lspconfig.nvim',
 		config = function()
-
 			require 'plugins.lsp.mason-lsp-config'
 		end
 	}
+
+	require 'plugins.lsp.clang'
+
+	require 'plugins.lsp.csharp_ls'
+
+	local common = require 'plugins.lsp.common'
+
+	require 'lspconfig'.jsonls.setup({
+		on_attach = common.on_attach,
+		capabilities = common.capabilities,
+	})
+
+	require 'lspconfig'.marksman.setup({
+		on_attach = common.on_attach,
+		capabilities = common.capabilities,
+	})
+
+	require 'lspconfig'.pyright.setup({
+		on_attach = common.on_attach,
+		capabilities = common.capabilities,
+	})
+
 
 	-- Rust tools
 	use 'mfussenegger/nvim-dap'

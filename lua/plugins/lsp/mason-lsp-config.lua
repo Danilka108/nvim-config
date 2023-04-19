@@ -1,3 +1,5 @@
-require 'mason-lspconfig'.setup {
-	ensure_installed = { 'sumneko_lua', 'rust_analyzer' }
-}
+require 'mason-lspconfig'.setup({
+	-- ensure_installed = { 'lua_ls', 'rust_analyzer', 'clangd' }
+	-- ensure_installed = { 'jsonls', 'lua_ls', 'rust_analyzer', 'clangd', 'pyright' },
+	-- , 'csharp_ls'
+})

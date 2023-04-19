@@ -1,6 +1,6 @@
 -- Insert 2 spaces for a tab
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 vim.opt.smartindent = true
 
@@ -25,6 +25,10 @@ vim.opt.termguicolors = true
 
 -- Do not show mode like '-- INSERT --'
 vim.cmd [[set noshowmode]]
+
+vim.cmd [[set modifiable]]
+
+vim.cmd [[set nowrap]]
 
 -- Do not comment newline
 vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]]

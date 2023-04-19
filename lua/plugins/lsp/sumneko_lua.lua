@@ -4,7 +4,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 local common = require 'plugins.lsp.common'
 
-require('lspconfig')['sumneko_lua'].setup({
+require('lspconfig')['lua_ls'].setup({
 	on_attach = common.on_attach,
 	capabilities = common.capabilities,
 	settings = {

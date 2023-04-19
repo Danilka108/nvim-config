@@ -41,6 +41,7 @@
         "/home/danilka108/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua/after",
         "/home/danilka108/.local/share/nvim/site/pack/packer/start/cmp-path/after",
         "/home/danilka108/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ]
 }
